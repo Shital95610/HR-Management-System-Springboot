@@ -1,27 +1,35 @@
-package basicprogram;
+package com.hr.management.service;
 
-public class MultiplicationTable {
+import com.hr.management.model.Employee;
+import com.hr.management.repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.List;
 
-	public static void main(String[] args)
-	{
-		//Number for which we have to print
-		//Multiplication table
-   int N=5;
-   //looping from 1 to 10 print multiplication
-   //table of number
-   //using the loop
-   
-   for(int i=1;i<=10;i++)
-   {
-	   //printing N*1  it is multiple to number N
-	   
-	  System.out.orintln(N+i+ + "*"  +i +"=" +N*i );
-	  i++;
-   }
-   
-   
-   
-   
-	}
-
+@Service
+public class EmployeeService {
+    
+    @Autowired
+    private EmployeeRepository employeeRepository;
+    
+    public List<Employee> getAllEmployees() {
+        return employeeRepository.findAll();
+    }
+    
+    public Employee getEmployeeById(Long id) {
+        return employeeRepository.findById(id).orElse(null);
+    }
+    
+    public Employee saveEmployee(Employee employee) {
+        return employeeRepository.save(employee);
+    }
+    
+    public Employee updateEmployee(Long id, Employee employee) {
+        employee.setId(id);
+        return employeeRepository.save(employee);
+    }
+    
+    public void deleteEmployee(Long id) {
+        employeeRepository.deleteById(id);
+    }
 }
