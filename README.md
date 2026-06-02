@@ -21,3 +21,6 @@ REST APIs for Employee Management using Spring Boot + Spring MVC + Spring Data J
 git clone https://github.com/Shital95610/HR-Management-System-Springboot
 cd HR-Management-System-Springboot
 mvn spring-boot:run
+
+After start server its open in browser:
+http://localhost:8080/api 
