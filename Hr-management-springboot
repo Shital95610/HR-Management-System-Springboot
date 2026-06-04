@@ -1,0 +1,10 @@
+   # HR Management System - Spring Boot
+
+   REST API endpoints built with Spring Boot + MySQL
+
+   ## Endpoints Tested
+   - GET /hello → Returns "Hello, Shital!"
+   - GET /api/employees → CRUD operations
+
+   ## Tech Stack
+   Spring Boot, Java 17, MySQL, Maven
